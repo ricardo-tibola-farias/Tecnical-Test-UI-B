@@ -6,6 +6,7 @@ import { CommentItemComponent } from './comment-item.component';
 
 @NgModule({
   declarations: [CommentItemComponent],
+  exports: [CommentItemComponent],
   imports: [
     CommonModule
   ]

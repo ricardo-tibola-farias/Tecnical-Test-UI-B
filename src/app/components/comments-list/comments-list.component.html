@@ -1,1 +1,27 @@
-<p>comments-list works!</p>
+<div class="comments-list">
+
+
+    <div class="comments-list__writer">
+        <textarea class="text-area"
+                  placeholder="Write your comment here"></textarea>
+    </div>
+
+    <div class="comments-list__items">
+
+        <ng-container *ngFor="let item of comments">
+            <app-comment-item [commentItem]="item"></app-comment-item>
+
+            <ng-container *ngFor="let subItem1 of item?.answerComments">
+                <app-comment-item [commentItem]="subItem1"></app-comment-item>
+
+                <ng-container *ngFor="let subItem2 of subItem1?.answerComments">
+                    <app-comment-item [commentItem]="subItem2"></app-comment-item>
+                </ng-container>
+
+            </ng-container>
+
+        </ng-container>
+
+    </div>
+
+</div>

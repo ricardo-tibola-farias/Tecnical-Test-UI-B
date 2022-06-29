@@ -1,1 +1,27 @@
-<p>comment-item works!</p>
+<div class="item"
+     [ngClass]="{ 
+         'item--level-1': commentItem?.level == 1,
+         'item--level-2': commentItem?.level == 2, 
+         'item--level-3': commentItem?.level == 3}">
+    <img class="item__avatar"
+         src="{{ commentItem?.avatar }}" />
+
+    <div class="item__comment-body">
+        <div class="item__name-line">
+            <h4> {{ commentItem?.name }} </h4>
+            <div class="item__actions">
+                <i class="item__icons material-icons-outlined">
+                    thumb_up
+                </i>
+                <i class="item__icons material-icons-outlined">
+                    thumb_down
+                </i>
+                <i class="item__icons material-icons-outlined">
+                    report
+                </i>
+            </div>
+        </div>
+        <p> {{ commentItem?.comment }} </p>
+    </div>
+
+</div>
