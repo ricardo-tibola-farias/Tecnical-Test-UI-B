@@ -1,0 +1,22 @@
+@import "./variables/breakpoints";
+
+// ! AVAILABLE MEDIAS QUERIES USING MIXINS
+// @include breakpoint-max($breakpoints-high){}
+
+/* media queries mixins*/
+
+@mixin breakpoint-max($point) {
+  @if $point == xxxl {
+    @media (max-width: $breakpoints-high) {
+      @content;
+    }
+  } @else if $point == xxl {
+    @media (max-width: $breakpoints-medium) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (max-width: $breakpoints-low) {
+      @content;
+    }
+  }
+}
